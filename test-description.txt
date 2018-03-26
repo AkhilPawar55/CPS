@@ -1,0 +1,167 @@
+Test Case : test1.txt
+Description:	1.)This is a general test case. Aimed to test the chain reaction when the different
+				paintball's are triggered, coloring cow's if within range of the paintball and 
+				trigerring other paintball's if the other paintball's are within the reach of the 
+				triggered paintball.
+				2.)Also, to test if a vertex is created if there is no edge between colors
+				and cows.
+				3.)Tests if a paintball pops when it is on the edge of a circle(sheel on edge of PINK's circle
+				    and PURPLE ON EDGE OF PINK)
+				
+
+Expected Output:
+
+('Triggering ', 'PINK', ' paint ball.')
+('   ', 'Daisy', ' is painted ', 'PINK')
+('   ', 'Sheel', ' is painted ', 'PINK')
+('   ', 'PURPLE', ' is triggered by ', 'PINK', 'paint ball.')
+('   ', 'RED', ' is triggered by ', 'PURPLE', 'paint ball.')
+('   ', 'Babe', ' is painted ', 'RED')
+('   ', 'BLUE', ' is triggered by ', 'RED', 'paint ball.')
+('   ', 'Babe', ' is painted ', 'BLUE')
+('   ', 'GREEN', ' is triggered by ', 'RED', 'paint ball.')
+('   ', 'Milka', ' is painted ', 'GREEN')
+('Triggering ', 'BLUE', ' paint ball.')
+('   ', 'Babe', ' is painted ', 'BLUE')
+('Triggering ', 'PURPLE', ' paint ball.')
+('   ', 'RED', ' is triggered by ', 'PURPLE', 'paint ball.')
+('   ', 'Babe', ' is painted ', 'RED')
+('   ', 'BLUE', ' is triggered by ', 'RED', 'paint ball.')
+('   ', 'Babe', ' is painted ', 'BLUE')
+('   ', 'GREEN', ' is triggered by ', 'RED', 'paint ball.')
+('   ', 'Milka', ' is painted ', 'GREEN')
+('Triggering ', 'YELLOW', ' paint ball.')
+    No cows were painted
+('Triggering ', 'GREEN', ' paint ball.')
+('   ', 'Milka', ' is painted ', 'GREEN')
+('   ', 'BLUE', ' is triggered by ', 'GREEN', 'paint ball.')
+('   ', 'Babe', ' is painted ', 'BLUE')
+('Triggering ', 'RED', ' paint ball.')
+('   ', 'Babe', ' is painted ', 'RED')
+('   ', 'BLUE', ' is triggered by ', 'RED', 'paint ball.')
+('   ', 'Babe', ' is painted ', 'BLUE')
+('   ', 'PURPLE', ' is triggered by ', 'RED', 'paint ball.')
+('   ', 'GREEN', ' is triggered by ', 'RED', 'paint ball.')
+('   ', 'Milka', ' is painted ', 'GREEN')
+
+Results:
+('Triggering the', 'PINK', 'paint ball is the best choice with', 5, 'total paint on the cows:')
+('Babe', "'s colors: ", ['RED', 'BLUE'])
+('Frank', "'s colors: []")
+('Milka', "'s colors: ", ['GREEN'])
+('Daisy', "'s colors: ", ['PINK'])
+('Fauntleroy', "'s colors: []")
+('Sheel', "'s colors: ", ['PINK'])
+
+
+---------------------------------------------------------------------------------------------------
+Test Case : test2.txt
+Description:	This test case simulates the condition where trigerring a paintball does not paint 
+				a cow and does not trigger other paintball's in the field. Basically no chain 
+				reaction.
+
+
+Expected Output:
+
+Field Of Dreams
+-----------------------
+BLUE connectedTo: []
+Babe connectedTo: []
+YELLOW connectedTo: []
+Milka connectedTo: []
+Piku connectedTo: []
+GREEN connectedTo: []
+Daisy connectedTo: []
+Fauntleroy connectedTo: []
+
+Beginning simulation ...
+('Triggering ', 'BLUE', ' paint ball.')
+    No cows were painted
+('Triggering ', 'YELLOW', ' paint ball.')
+    No cows were painted
+('Triggering ', 'GREEN', ' paint ball.')
+    No cows were painted
+
+
+---------------------------------------------------------------------------------------------------
+Test Case : test3.txt
+Description:	This test case simulates the condition where trigerring a paintball triggers 
+				another paintball, which in turn triggers the trigerring paintball. Here the test
+				case expects the already popped/triggered paintball to ignore the re-popping/
+				re-trigerring event. Hence, not entering an infinite loop.
+				Also, tests if same number of cows are painted by two different paintballs, 
+				the paintball which was traversed first will be the optimal paintball.
+
+
+
+Field Of Dreams
+-----------------------
+PINK connectedTo: ['BLUE', 'YELLOW', 'Babe', 'Milka', 'Fauntleroy']
+BLUE connectedTo: ['YELLOW', 'RED', 'Babe', 'Milka']
+Babe connectedTo: []
+YELLOW connectedTo: ['PINK', 'Milka', 'Fauntleroy', 'RED', 'BLUE', 'Babe']
+Milka connectedTo: []
+Daisy connectedTo: []
+Fauntleroy connectedTo: []
+RED connectedTo: ['BLUE', 'Daisy']
+
+Beginning simulation ...
+('Triggering ', 'PINK', ' paint ball.')
+('   ', 'BLUE', ' is triggered by ', 'PINK', 'paint ball.')
+('   ', 'YELLOW', ' is triggered by ', 'BLUE', 'paint ball.')
+('   ', 'Milka', ' is painted ', 'YELLOW')
+('   ', 'Fauntleroy', ' is painted ', 'YELLOW')
+('   ', 'RED', ' is triggered by ', 'YELLOW', 'paint ball.')
+('   ', 'Daisy', ' is painted ', 'RED')
+('   ', 'Babe', ' is painted ', 'YELLOW')
+('   ', 'Babe', ' is painted ', 'BLUE')
+('   ', 'Milka', ' is painted ', 'BLUE')
+('   ', 'Babe', ' is painted ', 'PINK')
+('   ', 'Milka', ' is painted ', 'PINK')
+('   ', 'Fauntleroy', ' is painted ', 'PINK')
+('Triggering ', 'BLUE', ' paint ball.')
+('   ', 'YELLOW', ' is triggered by ', 'BLUE', 'paint ball.')
+('   ', 'PINK', ' is triggered by ', 'YELLOW', 'paint ball.')
+('   ', 'Babe', ' is painted ', 'PINK')
+('   ', 'Milka', ' is painted ', 'PINK')
+('   ', 'Fauntleroy', ' is painted ', 'PINK')
+('   ', 'Milka', ' is painted ', 'YELLOW')
+('   ', 'Fauntleroy', ' is painted ', 'YELLOW')
+('   ', 'RED', ' is triggered by ', 'YELLOW', 'paint ball.')
+('   ', 'Daisy', ' is painted ', 'RED')
+('   ', 'Babe', ' is painted ', 'YELLOW')
+('   ', 'Babe', ' is painted ', 'BLUE')
+('   ', 'Milka', ' is painted ', 'BLUE')
+('Triggering ', 'YELLOW', ' paint ball.')
+('   ', 'PINK', ' is triggered by ', 'YELLOW', 'paint ball.')
+('   ', 'BLUE', ' is triggered by ', 'PINK', 'paint ball.')
+('   ', 'RED', ' is triggered by ', 'BLUE', 'paint ball.')
+('   ', 'Daisy', ' is painted ', 'RED')
+('   ', 'Babe', ' is painted ', 'BLUE')
+('   ', 'Milka', ' is painted ', 'BLUE')
+('   ', 'Babe', ' is painted ', 'PINK')
+('   ', 'Milka', ' is painted ', 'PINK')
+('   ', 'Fauntleroy', ' is painted ', 'PINK')
+('   ', 'Milka', ' is painted ', 'YELLOW')
+('   ', 'Fauntleroy', ' is painted ', 'YELLOW')
+('   ', 'Babe', ' is painted ', 'YELLOW')
+('Triggering ', 'RED', ' paint ball.')
+('   ', 'BLUE', ' is triggered by ', 'RED', 'paint ball.')
+('   ', 'YELLOW', ' is triggered by ', 'BLUE', 'paint ball.')
+('   ', 'PINK', ' is triggered by ', 'YELLOW', 'paint ball.')
+('   ', 'Babe', ' is painted ', 'PINK')
+('   ', 'Milka', ' is painted ', 'PINK')
+('   ', 'Fauntleroy', ' is painted ', 'PINK')
+('   ', 'Milka', ' is painted ', 'YELLOW')
+('   ', 'Fauntleroy', ' is painted ', 'YELLOW')
+('   ', 'Babe', ' is painted ', 'YELLOW')
+('   ', 'Babe', ' is painted ', 'BLUE')
+('   ', 'Milka', ' is painted ', 'BLUE')
+('   ', 'Daisy', ' is painted ', 'RED')
+
+Results:
+('Triggering the', 'PINK', 'paint ball is the best choice with', 9, 'total paint on the cows:')
+('Fauntleroy', "'s colors: ", ['YELLOW', 'PINK'])
+('Milka', "'s colors: ", ['YELLOW', 'BLUE', 'PINK'])
+('Babe', "'s colors: ", ['YELLOW', 'BLUE', 'PINK'])
+('Daisy', "'s colors: ", ['RED'])

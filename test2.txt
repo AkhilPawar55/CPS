@@ -1,0 +1,9 @@
+#no cows are painted
+cow Daisy 2 6
+paintball BLUE 8 8 1
+cow Fauntleroy 10 2
+paintball YELLOW 12 7 3
+cow Piku 6 5
+cow Babe 8 4
+cow Milka 6 3
+paintball GREEN 6 10 2

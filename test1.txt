@@ -1,0 +1,13 @@
+#original without flaunteroy and if flaunteroy is connected to no one...test case when a paintball is on the edge of a circle(sheel on edge of PINK's circle and PURPLE ON EDGE OF PINK)
+cow Daisy 2 6
+paintball BLUE 8 5 1
+cow Fauntleroy 15 15
+paintball RED 8 7 3
+paintball YELLOW 12 3 3
+cow Babe 8 4
+cow Milka 6 3
+paintball GREEN 6 5 2
+cow Frank 15 15
+paintball PURPLE 7 7 2
+paintball PINK 4 7 3
+cow Sheel 4 10

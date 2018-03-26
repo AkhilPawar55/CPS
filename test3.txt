@@ -1,0 +1,9 @@
+# and balls pop each other(cycle in a graph)
+cow Daisy 3 6
+paintball BLUE 6 5 3
+cow Fauntleroy 8 2
+paintball RED 4 6 3
+paintball YELLOW 8 3 5
+cow Babe 7 4
+cow Milka 5 3
+paintball PINK 5 2 4
